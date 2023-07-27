@@ -6,7 +6,16 @@ window.onload = (event) => {
       return response.json();
     })
     .then(
-      (json) => console.log(json),
+      (json) => {
+        console.log(json);
+        console.log(json.url);
+        const imageUrl = json.url;
+        const imgElement = document.createElement("img");
+        imgElement.src = imageUrl;
+
+        const moveImg = document.querySelector("#image-container");
+        moveImg.append(imgElement);
+      },
       (err) => console.log(err)
     );
 };
