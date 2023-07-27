@@ -1,4 +1,6 @@
 window.onload = (event) => {
+  event.preventDefault();
+
   fetch(
     "https://api.nasa.gov/planetary/apod?api_key=B1DPFwe5OBjq2QkaewOMi7dA2ZffDLqVn6H23mEx"
   )
@@ -9,6 +11,7 @@ window.onload = (event) => {
       (json) => {
         console.log(json);
         console.log(json.url);
+        // need to delete line 10 and 11 once done
         const imageUrl = json.url;
         const imgElement = document.createElement("img");
         imgElement.src = imageUrl;
@@ -18,4 +21,13 @@ window.onload = (event) => {
       },
       (err) => console.log(err)
     );
+
+  let selectedDate = null;
+
+  const storeDate = () => {
+    const dateInput = document.querySelector("#date");
+    selectedDate = dateInput;
+    console.log(selectedDate);
+  };
+  storeDate();
 };
