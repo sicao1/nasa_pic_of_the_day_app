@@ -45,6 +45,7 @@ window.onload = (event) => {
   // apod.nasa.gov/apod/ap${YYMMDD}.html
   // https://api.nasa.gov/planetary/apod?api_key=B1DPFwe5OBjq2QkaewOMi7dA2ZffDLqVn6H23mEx&date=2023-07-01&hd=true
 
+  // use user input to change what is viewed on screen
   document.querySelector(".cta-form");
   addEventListener("submit", (event) => {
     event.preventDefault();
@@ -52,6 +53,7 @@ window.onload = (event) => {
     const dateInputValue = document.querySelector("#date-input").value;
     console.log(dateInputValue);
 
+    // fetch new api json data and change
     fetch(
       `https://api.nasa.gov/planetary/apod?api_key=B1DPFwe5OBjq2QkaewOMi7dA2ZffDLqVn6H23mEx&date=${dateInputValue}&hd=true`
     )
@@ -59,12 +61,25 @@ window.onload = (event) => {
         return response.json();
       })
       .then((json) => {
-        console.log(json);
-        console.log(json.url);
-
+        // change image
         const newImgUrl = json.url;
         const imgSrc = document.querySelector("img");
         imgSrc.src = newImgUrl;
+
+        // change date shown
+        const newDate = json.date;
+        const placeNewDate = document.querySelector(".date-choosen h2");
+        placeNewDate.textContent = newDate;
+
+        // change title
+        const newTitle = json.title;
+        const placeNewTitle = document.querySelector(".title-of-photo h2");
+        placeNewTitle.textContent = newTitle;
+
+        // change explanation
+        const newExplanation = json.explanation;
+        const placeNewExplanation = document.querySelector(".explanation p");
+        placeNewExplanation.textContent = newExplanation;
       });
   });
 };
