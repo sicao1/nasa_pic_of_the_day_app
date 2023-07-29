@@ -38,13 +38,6 @@ window.onload = (event) => {
       (err) => console.log(err)
     );
 
-  // user chooses
-  // Store date so user can choose a date to see different images
-
-  // need to use a different site:
-  // apod.nasa.gov/apod/ap${YYMMDD}.html
-  // https://api.nasa.gov/planetary/apod?api_key=B1DPFwe5OBjq2QkaewOMi7dA2ZffDLqVn6H23mEx&date=2023-07-01&hd=true
-
   // use user input to change what is viewed on screen
   document.querySelector(".cta-form");
   addEventListener("submit", (event) => {
