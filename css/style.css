@@ -1,5 +1,6 @@
 body {
   background-color: darkslategrey;
+  color: gold;
 }
 
 /* input[type="date"]::-webkit-calendar-picker-indicator {
