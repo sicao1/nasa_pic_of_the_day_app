@@ -51,5 +51,20 @@ window.onload = (event) => {
 
     const dateInputValue = document.querySelector("#date-input").value;
     console.log(dateInputValue);
+
+    fetch(
+      `https://api.nasa.gov/planetary/apod?api_key=B1DPFwe5OBjq2QkaewOMi7dA2ZffDLqVn6H23mEx&date=${dateInputValue}&hd=true`
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((json) => {
+        console.log(json);
+        console.log(json.url);
+
+        const newImgUrl = json.url;
+        const imgSrc = document.querySelector("img");
+        imgSrc.src = newImgUrl;
+      });
   });
 };
