@@ -1,4 +1,23 @@
 body {
   background-color: darkslategrey;
   color: gold;
+  font-family: helvetica;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cta-form label {
+  display: block;
+  font-size: 1.2rem;
+}
+
+.cta-form input {
+  width: 100%;
+  font-size: 1.6rem;
+  font-family: inherit;
+  border-radius: 9px;
 }

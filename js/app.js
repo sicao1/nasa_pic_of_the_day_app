@@ -11,8 +11,6 @@ window.onload = (event) => {
     .then(
       (json) => {
         console.log(json);
-        console.log(json.url);
-
         // Get image
         const imageUrl = json.url;
         const imgElement = document.createElement("img");
@@ -26,7 +24,7 @@ window.onload = (event) => {
         placeTitle.append(title);
 
         // Get Date
-        const date = json.date;
+        const date = json.date.replaceAll("-", " ");
         const placeDate = document.querySelector(".date-choosen h2");
         placeDate.append(date);
 
@@ -54,6 +52,7 @@ window.onload = (event) => {
         return response.json();
       })
       .then((json) => {
+        console.log(json);
         // change image
         const newImgUrl = json.url;
         const imgSrc = document.querySelector("img");
