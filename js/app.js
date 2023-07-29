@@ -1,6 +1,7 @@
 window.onload = (event) => {
-  event.preventDefault();
+  // event.preventDefault();
 
+  // Starting point (baseline)
   fetch(
     "https://api.nasa.gov/planetary/apod?api_key=B1DPFwe5OBjq2QkaewOMi7dA2ZffDLqVn6H23mEx"
   )
@@ -11,9 +12,7 @@ window.onload = (event) => {
       (json) => {
         console.log(json);
         console.log(json.url);
-        console.log(json.title);
-        console.log(json.date);
-        // need to delete lines aboveonce done
+
         // Get image
         const imageUrl = json.url;
         const imgElement = document.createElement("img");
@@ -39,14 +38,18 @@ window.onload = (event) => {
       (err) => console.log(err)
     );
 
-  let selectedDate = null;
+  // user chooses
+  // Store date so user can choose a date to see different images
 
-  const storeDate = () => {
-    const dateInput = document.querySelector("#date");
-    selectedDate = dateInput;
-    console.log(selectedDate);
-  };
-  storeDate();
+  // need to use a different site:
+  // apod.nasa.gov/apod/ap${YYMMDD}.html
+  // https://api.nasa.gov/planetary/apod?api_key=B1DPFwe5OBjq2QkaewOMi7dA2ZffDLqVn6H23mEx&date=2023-07-01&hd=true
 
-  //Getting Title of Photo
+  document.querySelector(".cta-form");
+  addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const dateInputValue = document.querySelector("#date-input").value;
+    console.log(dateInputValue);
+  });
 };
