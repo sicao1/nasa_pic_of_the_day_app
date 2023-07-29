@@ -1,5 +1,11 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background-color: darkslategrey;
+  background-color: #2f4f4f;
   color: gold;
   font-family: helvetica;
 }
@@ -8,6 +14,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 2.6rem;
 }
 
 .cta-form label {
@@ -16,8 +23,10 @@ body {
 }
 
 .cta-form input {
-  width: 100%;
-  font-size: 1.6rem;
+  width: 45%;
+  font-size: 1.2rem;
   font-family: inherit;
   border-radius: 9px;
+  background-color: #acb9b9;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
