@@ -10,13 +10,31 @@ body {
   font-family: helvetica;
 }
 
-/* .header {
+header {
+  margin: 5rem;
+}
+
+.heading-presents {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  margin-bottom: 1.8rem;
+}
+
+.heading-title {
+  display: flex;
+  text-transform: uppercase;
+  letter-spacing: -0.2rem;
+  justify-content: center;
+  font-size: 80px;
+  margin-bottom: 2rem;
+}
+
+form {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 2.6rem;
-  margin-bottom: 1.2rem;
-}*/
+  gap: 1rem;
+}
 
 .cta-form label {
   display: inline-block;
@@ -25,30 +43,17 @@ body {
 }
 
 .cta-form input {
-  width: 45%;
-  font-size: 1.2rem;
+  width: 10%;
+  font-size: 1rem;
   font-family: inherit;
   border-radius: 9px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  color: #1a1a1a;
+  padding: 0.5rem;
+  background-color: #acb9b9;
 }
 
 form {
   margin-bottom: 5rem;
-}
-
-.heading-presents {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2.4rem;
-}
-
-.heading-title {
-  display: flex;
-  text-transform: uppercase;
-  letter-spacing: -0.1rem;
-  justify-content: center;
-  font-size: 80px;
-  margin-bottom: 4rem;
 }
 
 .main {
@@ -56,7 +61,7 @@ form {
   padding: 4.2rem;
   margin-right: 4.2rem;
   margin-left: 4.2rem;
-  background-color: #182828;
+  background-image: linear-gradient(to right bottom, #2f4f4f, #132020);
   color: #eaeded;
   border-radius: 11px;
 }
