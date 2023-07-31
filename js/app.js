@@ -24,7 +24,8 @@ window.onload = (event) => {
         placeTitle.append(title);
 
         // Get Date
-        const date = json.date.replaceAll("-", " ");
+        let date = json.date.split("-");
+        date = `${date[1]} ${date[2]} ${date[0]}`;
         const placeDate = document.querySelector(".date-choosen h2");
         placeDate.append(date);
 
@@ -59,7 +60,8 @@ window.onload = (event) => {
         imgSrc.src = newImgUrl;
 
         // change date shown
-        const newDate = json.date;
+        let newDate = json.date.split("-");
+        newDate = `${newDate[1]} ${newDate[2]} ${newDate[0]}`;
         const placeNewDate = document.querySelector(".date-choosen h2");
         placeNewDate.textContent = newDate;
 
