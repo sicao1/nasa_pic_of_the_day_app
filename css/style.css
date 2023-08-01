@@ -274,11 +274,46 @@ footer {
 
 /* below 544px (phones) */
 @media (max-width: 34em) {
-  .heading-presents,
+  .heading-presents {
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
+  }
   .heading-title {
     font-size: 1.25rem;
   }
   .heading-title {
     letter-spacing: normal;
+  }
+
+  .cta-form {
+    display: flex;
+    flex-direction: column;
+  }
+  .cta-form label {
+    font-size: 1rem;
+    margin-bottom: -0.5rem;
+  }
+  .cta-form input {
+    width: fit-content;
+  }
+
+  .main {
+    display: grid;
+    grid-template-columns: 1fr;
+    font-size: 60%;
+    margin: 1.2rem;
+    padding: 2.4rem;
+  }
+  .starter-img {
+    width: 100%;
+    margin-top: 1.2rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  .explore-more-info {
+    font-size: 12px;
   }
 }
