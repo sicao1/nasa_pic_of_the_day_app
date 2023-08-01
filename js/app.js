@@ -77,4 +77,16 @@ window.onload = (event) => {
         placeNewExplanation.textContent = newExplanation;
       });
   });
+
+  //buttons on carousel
+  const carousel = document.querySelector(".carousel");
+  const arrowBtns = document.querySelectorAll(".wrapper ion-icon");
+  const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+
+  arrowBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      carousel.scrollLeft +=
+        btn.id === "left" ? -firstCardWidth : firstCardWidth;
+    });
+  });
 };
