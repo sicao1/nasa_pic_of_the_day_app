@@ -86,8 +86,61 @@ form {
   line-height: 1.6;
 }
 
-img {
+.starter-img {
   max-width: 800px;
   box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.5);
   border-radius: 11px;
+}
+
+.browse-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(to right bottom, #2f4f4f, #132020);
+  padding: 0 35px;
+}
+
+.wrapper {
+  max-width: 1100px;
+  width: 100%;
+}
+
+.wrapper .carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 12px);
+  gap: 16px;
+  overflow: hidden;
+}
+
+.carousel .card {
+  height: 342px;
+  list-style: none;
+  background-color: #fff;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.card .browse-img {
+  background: #2f4f4f;
+  width: 148px;
+  height: 148px;
+  border-radius: 50%;
+}
+
+.card .browse-img img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.card h2 {
+  font-weight: 500;
+  font-size: 18px;
 }

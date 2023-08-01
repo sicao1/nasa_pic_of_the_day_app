@@ -15,6 +15,7 @@ window.onload = (event) => {
         const imageUrl = json.url;
         const imgElement = document.createElement("img");
         imgElement.src = imageUrl;
+        imgElement.classList = "starter-img";
         const moveImg = document.querySelector("#image-container");
         moveImg.append(imgElement);
 
