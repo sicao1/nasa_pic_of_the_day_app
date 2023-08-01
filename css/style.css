@@ -125,6 +125,27 @@ h3 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-radius: 11px;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.image-overlay > * {
+  transform: translateY(20px);
+  transition: transform 0.25s;
+}
+
+.image-overlay:hover {
+  opacity: 1;
+}
+
+.image-overlay:hover > * {
+  transform: translateY(0);
+}
+
+.image-title,
+.image-date {
+  line-height: 2;
 }
 
 .wrapper {
