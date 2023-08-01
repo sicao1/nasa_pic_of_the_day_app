@@ -106,7 +106,19 @@ form {
 }
 
 h3 {
-  color: #eaeded;
+  color: #182828;
+  margin-left: 4.2rem;
+  font-size: 50px;
+  text-transform: uppercase;
+  line-height: 1.5;
+  letter-spacing: -0.05rem;
+  text-align: center;
+}
+
+.explore-more-info {
+  margin-left: 4.2rem;
+  margin-bottom: 2.8rem;
+  text-align: center;
 }
 
 .browse-img {
@@ -174,11 +186,11 @@ ion-icon {
 }
 
 .wrapper ion-icon:first-child {
-  left: -22px;
+  left: -70px;
 }
 
 .wrapper ion-icon:last-child {
-  right: -22px;
+  right: -70px;
 }
 
 .wrapper .carousel {
