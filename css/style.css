@@ -83,6 +83,7 @@ form {
 
 .explanation {
   line-height: 1.6;
+  font-size: 18px;
 }
 
 .starter-img {
@@ -118,6 +119,7 @@ h3 {
   margin-left: 4.2rem;
   margin-bottom: 2.8rem;
   text-align: center;
+  font-size: 18px;
 }
 
 .browse-img {
@@ -300,7 +302,7 @@ footer {
   .main {
     display: grid;
     grid-template-columns: 1fr;
-    font-size: 60%;
+    font-size: 70%;
     margin: 1.2rem;
     padding: 2.4rem;
   }

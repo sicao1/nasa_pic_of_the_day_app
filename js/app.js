@@ -1,5 +1,5 @@
 window.onload = (event) => {
-  // event.preventDefault();
+  event.preventDefault();
 
   // Starting point (baseline)
   fetch(
@@ -37,6 +37,37 @@ window.onload = (event) => {
       },
       (err) => console.log(err)
     );
+
+  // explore more section to generate randomly
+  let randomGeneratedDate = "";
+  const randomYear = () => {
+    min = Math.ceil(1995);
+    max = Math.floor(2023);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  };
+  const randomMonth = () => {
+    min = Math.ceil(1);
+    max = Math.floor(12);
+    let randomGenMonth = Math.floor(Math.random() * (max - min + 1) + min);
+    return randomGenMonth < 10 ? "0" + randomGenMonth : randomGenMonth;
+  };
+  const randomDay = () => {
+    min = Math.ceil(1);
+    max = Math.floor(28);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  };
+  randomGeneratedDate = `${randomYear()}-${randomMonth()}-${randomDay()}`;
+  console.log(randomGeneratedDate);
+
+  fetch(
+    `https://api.nasa.gov/planetary/apod?api_key=B1DPFwe5OBjq2QkaewOMi7dA2ZffDLqVn6H23mEx&date=${randomGeneratedDate}`
+  )
+    .then((response) => {
+      return response.json();
+    })
+    .then((json) => {
+      console.log(json);
+    });
 
   // use user input to change what is viewed on screen
   document.querySelector(".cta-form");
