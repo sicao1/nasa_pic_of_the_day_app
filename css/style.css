@@ -257,3 +257,28 @@ footer {
     grid-auto-columns: 100%;
   }
 }
+
+/* below 1344px (smaller desktops) */
+@media (max-width: 84em) {
+  .heading-presents,
+  .heading-title {
+    font-size: 3.75rem;
+  }
+  .starter-img {
+    max-width: 40rem;
+  }
+  .header {
+    font-size: 4rem;
+  }
+}
+
+/* below 544px (phones) */
+@media (max-width: 34em) {
+  .heading-presents,
+  .heading-title {
+    font-size: 1.25rem;
+  }
+  .heading-title {
+    letter-spacing: normal;
+  }
+}
