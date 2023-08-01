@@ -94,8 +94,7 @@ form {
 .browse-more {
   display: flex;
   padding: 4.2rem;
-  margin-right: 4.2rem;
-  margin-left: 4.2rem;
+  margin: 0 4.2rem 4.2rem 4.2rem;
   background-image: linear-gradient(to right bottom, #2f4f4f, #132020);
   align-items: center;
   justify-content: center;
@@ -232,6 +231,19 @@ ion-icon {
 
 .card span {
   font-size: 16px;
+}
+
+footer {
+  border-top: 3px solid #2f4f4f;
+  line-height: 1.6;
+  margin: 0 4.2rem 4.2rem 4.2rem;
+}
+
+.social-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  font-size: 20px;
 }
 
 /* responsive section */
