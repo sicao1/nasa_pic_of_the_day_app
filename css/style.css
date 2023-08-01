@@ -169,6 +169,10 @@ h3 {
   font-size: 1.25rem;
 }
 
+ion-icon {
+  z-index: 2;
+}
+
 .wrapper ion-icon:first-child {
   left: -22px;
 }
