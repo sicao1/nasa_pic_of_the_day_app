@@ -106,6 +106,16 @@ form {
   width: 100%;
 }
 
+.wrapper ion-icon {
+  height: 50px;
+  width: 50px;
+  background: #fff;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 .wrapper .carousel {
   display: grid;
   grid-auto-flow: column;
@@ -127,7 +137,6 @@ form {
 }
 
 .card .browse-img {
-  background: #2f4f4f;
   width: 148px;
   height: 148px;
   border-radius: 50%;
