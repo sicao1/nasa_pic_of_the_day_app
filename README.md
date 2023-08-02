@@ -2,6 +2,8 @@
 
 GA first mini project
 
+https://serene-sprinkles-fcb288.netlify.app
+
 This site displays an astronomy picture of the day (APOD) with corresponding date and a brief explanation of the picture. Users upon entering the site will see the current days APOD with explanation. Users will also have an option to select a specific date and view that APOD. Below the main section is an explore more section where a carousel displays 7 randomly generated APOD's that display date and title when hovered over, and when clicked move into the main section to better view the picture and see the description.
 
 The approach taken:
