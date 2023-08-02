@@ -110,7 +110,6 @@ window.onload = (event) => {
         return response.json();
       })
       .then((json) => {
-        console.log(json);
         // Get image
         const randomUrl = json.url;
         const placeRandomUrl = card.querySelector(".image-img");
@@ -140,4 +139,14 @@ window.onload = (event) => {
         btn.id === "left" ? -firstCardWidth : firstCardWidth;
     });
   });
+
+  // choose from explore more to display on main section
+  const imgButton = document.querySelectorAll(".image-overlay");
+
+  for (let i = 0; i < imgButton.length; i++) {
+    imgButton[i].addEventListener("click", function (event) {
+      event.preventDefault();
+      console.log(`I've been clicked`);
+    });
+  }
 };
