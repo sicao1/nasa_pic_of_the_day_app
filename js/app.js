@@ -110,6 +110,7 @@ window.onload = (event) => {
         return response.json();
       })
       .then((json) => {
+        console.log(json);
         // Get image
         const randomUrl = json.url;
         const placeRandomUrl = card.querySelector(".image-img");
@@ -147,6 +148,12 @@ window.onload = (event) => {
     imgButton[i].addEventListener("click", function (event) {
       event.preventDefault();
       console.log(`I've been clicked`);
+      console.log(imgButton[i]);
+
+      const exploreMoreDate = document.querySelector(".image-date");
+      let formatExploreMoreDate = exploreMoreDate.textContent.split(" ");
+      formatExploreMoreDate = `${exploreMoreDate[2]}-${exploreMoreDate[0]}-${exploreMoreDate[1]}`;
+      console.log(formatExploreMoreDate);
     });
   }
 };
