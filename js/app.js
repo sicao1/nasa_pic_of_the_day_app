@@ -39,50 +39,154 @@ window.onload = (event) => {
     );
 
   // explore more section to generate randomly
-  let randomGeneratedDate = "";
-  const randomYear = () => {
-    min = Math.ceil(1995);
-    max = Math.floor(2023);
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  };
-  const randomMonth = () => {
-    min = Math.ceil(1);
-    max = Math.floor(12);
-    let randomGenMonth = Math.floor(Math.random() * (max - min + 1) + min);
-    return randomGenMonth < 10 ? "0" + randomGenMonth : randomGenMonth;
-  };
-  const randomDay = () => {
-    min = Math.ceil(1);
-    max = Math.floor(28);
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  };
-  randomGeneratedDate = `${randomYear()}-${randomMonth()}-${randomDay()}`;
-  console.log(randomGeneratedDate);
+  const cards = document.querySelectorAll(".carousel > li");
 
-  fetch(
-    `https://api.nasa.gov/planetary/apod?api_key=B1DPFwe5OBjq2QkaewOMi7dA2ZffDLqVn6H23mEx&date=${randomGeneratedDate}`
-  )
-    .then((response) => {
-      return response.json();
-    })
-    .then((json) => {
-      console.log(json);
-      // Get image
-      const randomUrl = json.url;
-      const placeRandomUrl = document.querySelector("#browse-img-1");
-      placeRandomUrl.src = randomUrl;
+  for (const card of cards) {
+    const randomGeneratedDate = () => {
+      const randomYear = () => {
+        min = Math.ceil(1996);
+        max = Math.floor(2023);
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      };
+      const randomMonth = () => {
+        min = Math.ceil(1);
+        max = Math.floor(12);
+        let randomGenMonth = Math.floor(Math.random() * (max - min + 1) + min);
+        return randomGenMonth < 10 ? "0" + randomGenMonth : randomGenMonth;
+      };
+      const randomDay = () => {
+        min = Math.ceil(1);
+        max = Math.floor(28);
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      };
+      return `${randomYear()}-${randomMonth()}-${randomDay()}`;
+    };
+    const randomDate = randomGeneratedDate();
 
-      // Get date
-      let randomDate = json.date.split("-");
-      randomDate = `${randomDate[1]} ${randomDate[2]} ${randomDate[0]}`;
-      const placeRandomDate = document.querySelector("#image-date-1");
-      placeRandomDate.textContent = randomDate;
+    fetch(
+      `https://api.nasa.gov/planetary/apod?api_key=B1DPFwe5OBjq2QkaewOMi7dA2ZffDLqVn6H23mEx&date=${randomDate}`
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((json) => {
+        console.log(json);
+        // Get image
+        const randomUrl = json.url;
+        const placeRandomUrl = card.querySelector(".image-img");
+        placeRandomUrl.src = randomUrl;
 
-      // Get title
-      const randomTitle = json.title;
-      const placeRandomTitle = document.querySelector("#image-title-1");
-      placeRandomTitle.textContent = randomTitle;
-    });
+        // Get date
+        let randomDate = json.date.split("-");
+        randomDate = `${randomDate[1]} ${randomDate[2]} ${randomDate[0]}`;
+        const placeRandomDate = card.querySelector(".image-date");
+        placeRandomDate.textContent = randomDate;
+
+        // Get title
+        const randomTitle = json.title;
+        const placeRandomTitle = card.querySelector(".image-title");
+        placeRandomTitle.textContent = randomTitle;
+      });
+  }
+
+  // // Card #1
+  // const card1 = () => {
+  //   let randomGeneratedDate = () => {
+  //     const randomYear = () => {
+  //       min = Math.ceil(1995);
+  //       max = Math.floor(2023);
+  //       return Math.floor(Math.random() * (max - min + 1) + min);
+  //     };
+  //     const randomMonth = () => {
+  //       min = Math.ceil(1);
+  //       max = Math.floor(12);
+  //       let randomGenMonth = Math.floor(Math.random() * (max - min + 1) + min);
+  //       return randomGenMonth < 10 ? "0" + randomGenMonth : randomGenMonth;
+  //     };
+  //     const randomDay = () => {
+  //       min = Math.ceil(1);
+  //       max = Math.floor(28);
+  //       return Math.floor(Math.random() * (max - min + 1) + min);
+  //     };
+  //     randomGeneratedDate = `${randomYear()}-${randomMonth()}-${randomDay()}`;
+  //   };
+  //   randomGeneratedDate();
+
+  //   fetch(
+  //     `https://api.nasa.gov/planetary/apod?api_key=B1DPFwe5OBjq2QkaewOMi7dA2ZffDLqVn6H23mEx&date=${randomGeneratedDate}`
+  //   )
+  //     .then((response) => {
+  //       return response.json();
+  //     })
+  //     .then((json) => {
+  //       console.log(json);
+  //       // Get image
+  //       const randomUrl = json.url;
+  //       const placeRandomUrl = document.querySelector("#browse-img-1");
+  //       placeRandomUrl.src = randomUrl;
+
+  //       // Get date
+  //       let randomDate = json.date.split("-");
+  //       randomDate = `${randomDate[1]} ${randomDate[2]} ${randomDate[0]}`;
+  //       const placeRandomDate = document.querySelector("#image-date-1");
+  //       placeRandomDate.textContent = randomDate;
+
+  //       // Get title
+  //       const randomTitle = json.title;
+  //       const placeRandomTitle = document.querySelector("#image-title-1");
+  //       placeRandomTitle.textContent = randomTitle;
+  //     });
+  // };
+  // card1();
+  // // Card #2
+  // const card2 = () => {
+  //   let randomGeneratedDate = () => {
+  //     const randomYear = () => {
+  //       min = Math.ceil(1995);
+  //       max = Math.floor(2023);
+  //       return Math.floor(Math.random() * (max - min + 1) + min);
+  //     };
+  //     const randomMonth = () => {
+  //       min = Math.ceil(1);
+  //       max = Math.floor(12);
+  //       let randomGenMonth = Math.floor(Math.random() * (max - min + 1) + min);
+  //       return randomGenMonth < 10 ? "0" + randomGenMonth : randomGenMonth;
+  //     };
+  //     const randomDay = () => {
+  //       min = Math.ceil(1);
+  //       max = Math.floor(28);
+  //       return Math.floor(Math.random() * (max - min + 1) + min);
+  //     };
+  //     randomGeneratedDate = `${randomYear()}-${randomMonth()}-${randomDay()}`;
+  //   };
+  //   randomGeneratedDate();
+
+  //   fetch(
+  //     `https://api.nasa.gov/planetary/apod?api_key=B1DPFwe5OBjq2QkaewOMi7dA2ZffDLqVn6H23mEx&date=${randomGeneratedDate}`
+  //   )
+  //     .then((response) => {
+  //       return response.json();
+  //     })
+  //     .then((json) => {
+  //       console.log(json);
+  //       // Get image
+  //       const randomUrl = json.url;
+  //       const placeRandomUrl = document.querySelector("#browse-img-2");
+  //       placeRandomUrl.src = randomUrl;
+
+  //       // Get date
+  //       let randomDate = json.date.split("-");
+  //       randomDate = `${randomDate[1]} ${randomDate[2]} ${randomDate[0]}`;
+  //       const placeRandomDate = document.querySelector("#image-date-2");
+  //       placeRandomDate.textContent = randomDate;
+
+  //       // Get title
+  //       const randomTitle = json.title;
+  //       const placeRandomTitle = document.querySelector("#image-title-2");
+  //       placeRandomTitle.textContent = randomTitle;
+  //     });
+  // };
+  // card2();
 
   // use user input to change what is viewed on screen
   document.querySelector(".cta-form");
