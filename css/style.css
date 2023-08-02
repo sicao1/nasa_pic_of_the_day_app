@@ -101,24 +101,23 @@ form {
   justify-content: center;
   min-height: 35vh;
   background: linear-gradient(to right bottom, #2f4f4f, #132020);
-  padding: 0 35px;
   border-radius: 11px;
 }
 
 h3 {
+  display: flex;
+  justify-content: center;
   color: #182828;
-  margin-left: 4.2rem;
   font-size: 50px;
   text-transform: uppercase;
   line-height: 1.5;
   letter-spacing: -0.05rem;
-  text-align: center;
 }
 
 .explore-more-info {
-  margin-left: 4.2rem;
+  display: flex;
+  justify-content: center;
   margin-bottom: 2.8rem;
-  text-align: center;
   font-size: 18px;
 }
 

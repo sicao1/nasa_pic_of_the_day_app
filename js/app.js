@@ -59,9 +59,6 @@ window.onload = (event) => {
   randomGeneratedDate = `${randomYear()}-${randomMonth()}-${randomDay()}`;
   console.log(randomGeneratedDate);
 
-  const testing = document.querySelectorAll(".browse-img img");
-  console.log(testing);
-
   fetch(
     `https://api.nasa.gov/planetary/apod?api_key=B1DPFwe5OBjq2QkaewOMi7dA2ZffDLqVn6H23mEx&date=${randomGeneratedDate}`
   )
@@ -78,12 +75,12 @@ window.onload = (event) => {
       // Get date
       let randomDate = json.date.split("-");
       randomDate = `${randomDate[1]} ${randomDate[2]} ${randomDate[0]}`;
-      const placeRandomDate = document.querySelector(".image-date");
+      const placeRandomDate = document.querySelector("#image-date-1");
       placeRandomDate.textContent = randomDate;
 
       // Get title
       const randomTitle = json.title;
-      const placeRandomTitle = document.querySelector(".image-title");
+      const placeRandomTitle = document.querySelector("#image-title-1");
       placeRandomTitle.textContent = randomTitle;
     });
 
