@@ -57,6 +57,10 @@ window.onload = (event) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
   };
   randomGeneratedDate = `${randomYear()}-${randomMonth()}-${randomDay()}`;
+  console.log(randomGeneratedDate);
+
+  const testing = document.querySelectorAll(".browse-img img");
+  console.log(testing);
 
   fetch(
     `https://api.nasa.gov/planetary/apod?api_key=B1DPFwe5OBjq2QkaewOMi7dA2ZffDLqVn6H23mEx&date=${randomGeneratedDate}`
@@ -66,9 +70,21 @@ window.onload = (event) => {
     })
     .then((json) => {
       console.log(json);
+      // Get image
       const randomUrl = json.url;
       const placeRandomUrl = document.querySelector("#browse-img-1");
       placeRandomUrl.src = randomUrl;
+
+      // Get date
+      let randomDate = json.date.split("-");
+      randomDate = `${randomDate[1]} ${randomDate[2]} ${randomDate[0]}`;
+      const placeRandomDate = document.querySelector(".image-date");
+      placeRandomDate.textContent = randomDate;
+
+      // Get title
+      const randomTitle = json.title;
+      const placeRandomTitle = document.querySelector(".image-title");
+      placeRandomTitle.textContent = randomTitle;
     });
 
   // use user input to change what is viewed on screen
