@@ -151,8 +151,10 @@ window.onload = (event) => {
       console.log(imgButton[i]);
 
       const exploreMoreDate = document.querySelector(".image-date");
+
       let formatExploreMoreDate = exploreMoreDate.textContent.split(" ");
-      formatExploreMoreDate = `${exploreMoreDate[2]}-${exploreMoreDate[0]}-${exploreMoreDate[1]}`;
+
+      formatExploreMoreDate = `${formatExploreMoreDate[2]}-${formatExploreMoreDate[0]}-${formatExploreMoreDate[1]}`;
       console.log(formatExploreMoreDate);
     });
   }
