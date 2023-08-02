@@ -150,12 +150,42 @@ window.onload = (event) => {
       console.log(`I've been clicked`);
       console.log(imgButton[i]);
 
-      const exploreMoreDate = document.querySelector(".image-date");
+      const exploreMoreDate = imgButton[i].querySelector(".image-date");
 
       let formatExploreMoreDate = exploreMoreDate.textContent.split(" ");
 
       formatExploreMoreDate = `${formatExploreMoreDate[2]}-${formatExploreMoreDate[0]}-${formatExploreMoreDate[1]}`;
       console.log(formatExploreMoreDate);
+
+      fetch(
+        `https://api.nasa.gov/planetary/apod?api_key=B1DPFwe5OBjq2QkaewOMi7dA2ZffDLqVn6H23mEx&date=${formatExploreMoreDate}&hd=true`
+      )
+        .then((response) => {
+          return response.json();
+        })
+        .then((json) => {
+          console.log(json);
+          // change image
+          const newImgUrl = json.url;
+          const imgSrc = document.querySelector("img");
+          imgSrc.src = newImgUrl;
+
+          // change date shown
+          let newDate = json.date.split("-");
+          newDate = `${newDate[1]} ${newDate[2]} ${newDate[0]}`;
+          const placeNewDate = document.querySelector(".date-choosen h2");
+          placeNewDate.textContent = newDate;
+
+          // change title
+          const newTitle = json.title;
+          const placeNewTitle = document.querySelector(".title-of-photo h2");
+          placeNewTitle.textContent = newTitle;
+
+          // change explanation
+          const newExplanation = json.explanation;
+          const placeNewExplanation = document.querySelector(".explanation p");
+          placeNewExplanation.textContent = newExplanation;
+        });
     });
   }
 };
