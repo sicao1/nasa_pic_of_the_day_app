@@ -271,6 +271,31 @@ footer {
   .header {
     font-size: 4rem;
   }
+  .explore-more-info {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+}
+
+/* below 944px (tablets) */
+@media (max-width: 59em) {
+  .heading-presents {
+    font-size: 1.5rem;
+  }
+  .cta-form input {
+    width: fit-content;
+  }
+  .main {
+    display: grid;
+    grid-template-columns: 1fr;
+    font-size: 70%;
+    margin: 1.2rem;
+    padding: 2.4rem;
+  }
+  .starter-img {
+    width: 100%;
+    margin-top: 1.2rem;
+  }
 }
 
 /* below 544px (phones) */
